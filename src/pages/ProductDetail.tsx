@@ -2,6 +2,15 @@ import React, { useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { products } from '../data/products';
 import { useCart } from '../context/CartContext';
+import { SuperfoodSection } from '../components/ui/SuperfoodSection';
+import { ExpandableInfoSection } from '../components/ui/ExpandableInfoSection';
+import { AffirmationVideoSection } from '../components/ui/AffirmationVideoSection';
+import { SustainableRefillSection } from '../components/ui/SustainableRefillSection';
+import { CommunityReviewsSection } from '../components/ui/CommunityReviewsSection';
+import { WellnessJournalSection } from '../components/ui/WellnessJournalSection';
+import { BrandMarqueeStrip } from '../components/ui/BrandMarqueeStrip';
+import { FinalCTASection } from '../components/ui/FinalCTASection';
+import godRayImg from '../assets/godray.webp';
 
 const productEditorialData: Record<string, {
   titleLines: string[];
@@ -155,10 +164,21 @@ export const ProductDetail: React.FC = () => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-[#F6F4F8] text-[#1D1D1F] font-sans flex flex-col items-center">
-      <div className="max-w-[1200px] w-full mx-auto px-8 py-10 bg-[#F6F4F8] pt-32 pb-12">
+    <div className="w-full min-h-screen bg-[#F7F7FB] text-[#1D1D1F] font-sans flex flex-col items-center relative overflow-hidden">
+      {/* Background Light Rays */}
+      <div 
+        className="absolute inset-0 w-full h-full z-0 pointer-events-none select-none"
+        style={{
+          backgroundImage: `url(${godRayImg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'top center',
+          opacity: 0.12,
+          mixBlendMode: 'screen'
+        }}
+      />
+      <div className="max-w-[1200px] w-full mx-auto px-8 py-10 bg-transparent pt-32 pb-12 z-10 relative">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-0">
-          
+
           {/* LEFT SIDE: PRODUCT GALLERY (568px wide on desktop, top-aligned) */}
           <div className="w-full lg:w-[568px] flex flex-col mx-auto lg:mx-0">
             {/* Large hero image card - square, rounded-[28px] */}
@@ -168,41 +188,39 @@ export const ProductDetail: React.FC = () => {
                 alt={product.name}
                 className="w-full h-full object-cover"
               />
-              
+
               {/* Centered pagination dots overlay near bottom - smaller dots, tight spacing */}
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
                 {thumbnails.map((thumb, idx) => (
                   <button
                     key={idx}
                     onClick={() => setSelectedImage(thumb)}
-                    className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
-                      selectedImage === thumb ? 'bg-white' : 'bg-white/40 hover:bg-white/60'
-                    }`}
+                    className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${selectedImage === thumb ? 'bg-white' : 'bg-white/40 hover:bg-white/60'
+                      }`}
                     aria-label={`Go to slide ${idx + 1}`}
                   />
                 ))}
               </div>
             </div>
-            
+
             {/* Horizontal thumbnail gallery underneath - exactly 5 image-only thumbnails, fixed 104x104px, rounded-12px, gap-3 */}
             <div className="flex gap-3 w-full mt-3.5 select-none">
               {thumbnails.map((thumb, idx) => (
                 <button
                   key={idx}
                   onClick={() => setSelectedImage(thumb)}
-                  className={`w-[104px] h-[104px] rounded-[12px] overflow-hidden border cursor-pointer transition-all duration-300 ${
-                    selectedImage === thumb ? 'border-[#1D1D1F]' : 'border-[#E5E7EB] hover:border-[#1D1D1F]/20'
-                  }`}
+                  className={`w-[104px] h-[104px] rounded-[12px] overflow-hidden border cursor-pointer transition-all duration-300 ${selectedImage === thumb ? 'border-[#1D1D1F]' : 'border-[#E5E7EB] hover:border-[#1D1D1F]/20'
+                    }`}
                 >
                   <img src={thumb} alt="" className="w-full h-full object-cover" />
                 </button>
               ))}
             </div>
           </div>
-          
+
           {/* RIGHT SIDE: PRODUCT INFORMATION (480px wide on desktop, top-aligned) */}
           <div className="w-full lg:w-[480px] flex flex-col justify-start text-left pt-0 space-y-6 md:space-y-8">
-            
+
             {/* Star Rating & Text */}
             <div className="flex items-center gap-3 select-none">
               <span className="text-[20px] text-[#D4A054] tracking-[0.05em] leading-none">★★★★★</span>
@@ -210,7 +228,7 @@ export const ProductDetail: React.FC = () => {
                 Rated 4.8/5 by the Body Cafe Co. Community
               </span>
             </div>
-            
+
             {/* Product Title - Large editorial serif, tight line-height, mt-1 to sit close to rating */}
             <h1 className="font-serif font-normal text-[52px] sm:text-[68px] md:text-[80px] lg:text-[90px] xl:text-[95px] text-[#1D1D1F] leading-[0.85] tracking-[-0.02em] mt-1 select-none">
               {editorial.titleLines.map((line, idx) => (
@@ -220,7 +238,7 @@ export const ProductDetail: React.FC = () => {
                 </React.Fragment>
               ))}
             </h1>
-            
+
             {/* Subtitle - Narrowed max-width */}
             <p className="text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] leading-[1.25] text-[#2C2C2E] font-sans font-light tracking-wide max-w-[440px] mt-6 select-none">
               {editorial.mainSubtitle}{' '}
@@ -228,7 +246,7 @@ export const ProductDetail: React.FC = () => {
                 {editorial.italicSubtitle}
               </span>
             </p>
-            
+
             {/* Benefits List - Reduced vertical spacing */}
             <ul className="space-y-2.5 pt-2 select-none">
               {editorial.benefits.map((benefit, idx) => (
@@ -238,7 +256,7 @@ export const ProductDetail: React.FC = () => {
                 </li>
               ))}
             </ul>
-            
+
             {/* CTA Button - Pill, refined 190x58px */}
             <div className="pt-2">
               <button
@@ -248,12 +266,20 @@ export const ProductDetail: React.FC = () => {
                 ADD TO CART
               </button>
             </div>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
+
+      <SuperfoodSection />
+      <ExpandableInfoSection product={product} />
+      <AffirmationVideoSection />
+      <BrandMarqueeStrip />
+      <SustainableRefillSection />
+      <CommunityReviewsSection />
+      <WellnessJournalSection />
+      <FinalCTASection />
     </div>
   );
 };
