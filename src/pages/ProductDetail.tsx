@@ -166,7 +166,7 @@ export const ProductDetail: React.FC = () => {
   return (
     <div className="w-full min-h-screen bg-[#F7F7FB] text-[#1D1D1F] font-sans flex flex-col items-center relative overflow-hidden">
       {/* Background Light Rays */}
-      <div 
+      <div
         className="absolute inset-0 w-full h-full z-0 pointer-events-none select-none"
         style={{
           backgroundImage: `url(${godRayImg})`,

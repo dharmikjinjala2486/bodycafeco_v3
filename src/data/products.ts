@@ -50,11 +50,9 @@ export const products: Product[] = [
     servingSize: '2 Softgels',
     servingsPerContainer: 30,
     tags: ['Heart Health', 'Brain Health', 'Joint Support', 'Daily Essential'],
-    imageUrl: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&q=80&w=800',
+    imageUrl: '/Producta/Fish Oil.png',
     galleryUrls: [
-      'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1584017911794-7164a66e4a2e?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&q=80&w=800'
+      '/Producta/Fish Oil.png',
     ]
   },
   {
@@ -82,10 +80,9 @@ export const products: Product[] = [
     servingSize: '1 Scoop (5g)',
     servingsPerContainer: 60,
     tags: ['Strength', 'ATP Output', 'Brain Support', 'Clean Sport'],
-    imageUrl: 'https://images.unsplash.com/photo-1611536326696-b52be8ef45f6?auto=format&fit=crop&q=80&w=800',
+    imageUrl: '/Producta/Creatine Monohydrate (Micronized).png',
     galleryUrls: [
-      'https://images.unsplash.com/photo-1611536326696-b52be8ef45f6?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&q=80&w=800'
+      '/Producta/Creatine Monohydrate (Micronized).png',
     ]
   },
   {
@@ -115,10 +112,255 @@ export const products: Product[] = [
     servingSize: '1 Liquid Capsule',
     servingsPerContainer: 60,
     tags: ['Bone Density', 'Immune Defense', 'Longevity', 'Vegan Resource'],
-    imageUrl: 'https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&q=80&w=800',
+    imageUrl: '/Producta/D3 + K2.png',
     galleryUrls: [
-      'https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1626847037657-fd3622613ce3?auto=format&fit=crop&q=80&w=800'
+      '/Producta/D3 + K2.png',
+    ]
+  },
+  {
+    id: 'magnesium',
+    name: 'Magnesium L-Threonate (Neuro-Mag)',
+    slug: 'magnesium-l-threonate',
+    category: 'Cognitive Health',
+    price: 1699,
+    salePrice: 1499,
+    subscriptionDiscount: 15,
+    rating: 4.9,
+    reviewsCount: 176,
+    shortDescription: 'The only form of magnesium validated to effectively cross the blood-brain barrier to promote synapse density, sleep quality, and calm.',
+    description: 'Magnesium L-Threonate was developed at MIT to solve a critical limitation of other magnesium forms: brain bioavailability. By crossing the blood-brain barrier, it elevates cerebrospinal fluid magnesium, supporting synaptic density, calming nervous system excitability, and optimizing slow-wave sleep cycles.',
+    benefits: [
+      'Crosses the blood-brain barrier to optimize neural magnesium levels',
+      'Improves executive function, attention, and memory consolidation',
+      'Promotes restorative deep sleep and calms racing thoughts',
+      'Supports healthy neural connections and synapse plasticity'
+    ],
+    ingredients: [
+      { name: 'Magnesium L-Threonate (Magtein®)', dosage: '2000 mg' },
+      { name: '  yielding Elemental Magnesium', dosage: '144 mg', dailyValue: '34%' }
+    ],
+    howToUse: 'Take 3 capsules daily. We recommend 1 capsule in the afternoon and 2 capsules 1 hour before sleep to support circadian rest.',
+    servingSize: '3 Vegan Capsules',
+    servingsPerContainer: 30,
+    tags: ['Deep Sleep', 'Synapse Density', 'Nervous Calm', 'Brain Bioactive'],
+    imageUrl: '/Producta/Magnesium.png',
+    galleryUrls: [
+      '/Producta/Magnesium.png',
+    ]
+  },
+  {
+    id: 'l-theanine',
+    name: 'L-Theanine (Pure Calm Focus)',
+    slug: 'l-theanine',
+    category: 'Cognitive Health',
+    price: 899,
+    salePrice: 799,
+    subscriptionDiscount: 15,
+    rating: 4.8,
+    reviewsCount: 213,
+    shortDescription: 'Pharmaceutical-grade L-Theanine derived from green tea to promote calm alertness, reduce stress, and sharpen focus without sedation.',
+    description: 'L-Theanine is a naturally occurring amino acid found in green tea leaves that promotes a state of relaxed alertness by modulating alpha brain wave activity. Our pharmaceutical-grade L-Theanine is produced via enzymatic synthesis for 100% purity, free from any plant contaminants. It works synergistically with caffeine to eliminate jitters and extend focus duration.',
+    benefits: [
+      'Induces calm, alert mental state without drowsiness or sedation',
+      'Reduces physiological and psychological stress responses',
+      'Synergizes with caffeine for sustained, clean focus',
+      'Promotes alpha brain wave activity for creative flow states'
+    ],
+    ingredients: [
+      { name: 'L-Theanine (Suntheanine®)', dosage: '200 mg', dailyValue: '*' }
+    ],
+    howToUse: 'Take 1–2 capsules daily. For focus, take with morning coffee. For relaxation, take 30 minutes before a stressful event or before bedtime.',
+    servingSize: '1 Vegan Capsule',
+    servingsPerContainer: 60,
+    tags: ['Calm Focus', 'Stress Relief', 'Sleep Support', 'Caffeine Synergy'],
+    imageUrl: '/Producta/L-Theanine.png',
+    galleryUrls: [
+      '/Producta/L-Theanine.png',
+    ]
+  },
+  {
+    id: 'affron-saffron',
+    name: 'Affron® Saffron Extract',
+    slug: 'affron-saffron-extract',
+    category: 'Cognitive Health',
+    price: 1299,
+    salePrice: 1099,
+    subscriptionDiscount: 15,
+    rating: 4.85,
+    reviewsCount: 147,
+    shortDescription: 'Clinically-studied Affron® saffron extract standardized to 3.5% Lepticrosalide® for mood elevation, emotional well-being, and cognitive resilience.',
+    description: 'Affron® is the world\'s most clinically researched saffron extract, standardized to 3.5% Lepticrosalide® — the unique bioactive compound responsible for saffron\'s adaptogenic properties. Derived from Crocus sativus pistils cultivated in Spain, each batch is rigorously tested for purity, potency, and absence of adulterants. Clinical trials demonstrate significant improvements in mood, emotional resilience, and sleep quality.',
+    benefits: [
+      'Clinically shown to improve mood and emotional well-being',
+      'Supports healthy serotonin and dopamine neurotransmitter balance',
+      'Reduces cortisol levels and promotes stress resilience',
+      'Improves sleep quality and nighttime recovery'
+    ],
+    ingredients: [
+      { name: 'Affron® Saffron Extract (Crocus sativus, stigmas)', dosage: '28 mg' },
+      { name: '  standardized to 3.5% Lepticrosalide®', dosage: '~1 mg' }
+    ],
+    howToUse: 'Take 1 capsule daily with a meal. For optimal mood benefits, consistent daily use for 4–8 weeks is recommended.',
+    servingSize: '1 Vegan Capsule',
+    servingsPerContainer: 60,
+    tags: ['Mood Support', 'Stress Relief', 'Sleep Quality', 'Emotional Wellness'],
+    imageUrl: '/Producta/Affron® Saffron Extract.png',
+    galleryUrls: [
+      '/Producta/Affron® Saffron Extract.png',
+    ]
+  },
+  {
+    id: 'beetroot',
+    name: 'Beetroot (TruBeet®)',
+    slug: 'beetroot-trubeet',
+    category: 'Performance',
+    price: 1099,
+    salePrice: 949,
+    subscriptionDiscount: 15,
+    rating: 4.75,
+    reviewsCount: 189,
+    shortDescription: 'TruBeet® concentrated beetroot extract delivering a potent dose of dietary nitrates to boost nitric oxide, endurance, and cardiovascular efficiency.',
+    description: 'TruBeet® is a premium, concentrated whole beetroot powder standardized for dietary nitrate content. Beetroot nitrates are converted in the body to nitric oxide (NO), a key vasodilator that expands blood vessels, improves oxygen delivery to muscles, and reduces the oxygen cost of exercise. This translates directly into enhanced athletic endurance, faster recovery, and better cardiovascular efficiency.',
+    benefits: [
+      'Elevates nitric oxide production for enhanced blood flow and muscle pump',
+      'Reduces oxygen cost of submaximal exercise to extend endurance',
+      'Supports healthy blood pressure within normal range',
+      'Loaded with antioxidant betalains for cellular protection'
+    ],
+    ingredients: [
+      { name: 'TruBeet® Concentrated Whole Beetroot (Beta vulgaris)', dosage: '500 mg' },
+      { name: 'Dietary Nitrates (as Beetroot Nitrate)', dosage: '~200 mg' }
+    ],
+    howToUse: 'Take 2 capsules 30–60 minutes before exercise, or as a daily cardiovascular supplement with food.',
+    servingSize: '2 Vegan Capsules',
+    servingsPerContainer: 30,
+    tags: ['Nitric Oxide', 'Endurance', 'Cardiovascular', 'Athletic Performance'],
+    imageUrl: '/Producta/Beetroot (TruBeet®).png',
+    galleryUrls: [
+      '/Producta/Beetroot (TruBeet®).png',
+    ]
+  },
+  {
+    id: 'berberine-cinnamon',
+    name: 'Berberine + Cinnamon',
+    slug: 'berberine-cinnamon',
+    category: 'Longevity',
+    price: 1399,
+    salePrice: 1199,
+    subscriptionDiscount: 15,
+    rating: 4.8,
+    reviewsCount: 234,
+    shortDescription: 'A powerful metabolic synergy of pharmaceutical-grade Berberine HCl and Ceylon Cinnamon for blood sugar regulation, insulin sensitivity, and metabolic health.',
+    description: 'Berberine is one of the most well-researched compounds for metabolic health, shown in multiple clinical trials to rival pharmaceutical interventions for blood glucose management. Combined with Ceylon Cinnamon — shown to improve insulin receptor sensitivity — this powerful duo creates a comprehensive metabolic optimization formula that supports healthy body composition, energy stability, and longevity pathways (including AMPK activation).',
+    benefits: [
+      'Activates AMPK — the metabolic master switch for energy balance',
+      'Supports healthy blood glucose levels and insulin sensitivity',
+      'Promotes healthy cholesterol and triglyceride levels',
+      'Synergizes with Ceylon Cinnamon for enhanced metabolic control'
+    ],
+    ingredients: [
+      { name: 'Berberine HCl (from Berberis aristata root)', dosage: '500 mg' },
+      { name: 'Ceylon Cinnamon (Cinnamomum verum bark)', dosage: '300 mg' }
+    ],
+    howToUse: 'Take 1 capsule 2–3 times daily with meals. Start with 1 capsule per day and gradually increase to assess tolerance.',
+    servingSize: '1 Vegan Capsule',
+    servingsPerContainer: 90,
+    tags: ['Blood Sugar', 'Metabolic Health', 'AMPK Activator', 'Longevity'],
+    imageUrl: '/Producta/Berberine + Cinnamon.png',
+    galleryUrls: [
+      '/Producta/Berberine + Cinnamon.png',
+    ]
+  },
+  {
+    id: 'iron-bisglycinate',
+    name: 'Iron Bisglycinate',
+    slug: 'iron-bisglycinate',
+    category: 'Daily Essentials',
+    price: 749,
+    salePrice: 649,
+    subscriptionDiscount: 15,
+    rating: 4.85,
+    reviewsCount: 158,
+    shortDescription: 'Highly bioavailable iron chelated with glycine for superior absorption, energy production, and hemoglobin synthesis with minimal GI side effects.',
+    description: 'Iron Bisglycinate (iron chelated with two glycine molecules) is the gold standard form of supplemental iron, offering dramatically superior absorption rates compared to iron sulfate or fumarate, while being exceptionally gentle on the digestive system. This form directly enters the intestinal cells via a separate amino acid transport pathway, bypassing the competitive mineral absorption pathways that reduce other iron forms\' effectiveness.',
+    benefits: [
+      'Superior bioavailability vs. traditional iron sulfate forms',
+      'Supports healthy red blood cell and hemoglobin production',
+      'Reduces fatigue and supports energy metabolism (B12 & folate synergy)',
+      'Gentle on the stomach — no constipation or GI distress'
+    ],
+    ingredients: [
+      { name: 'Iron (as Ferrous Bisglycinate Chelate)', dosage: '25 mg', dailyValue: '139%' }
+    ],
+    howToUse: 'Take 1 capsule daily with or without food. For optimal absorption, take with Vitamin C. Avoid taking with calcium supplements or dairy within 2 hours.',
+    servingSize: '1 Vegan Capsule',
+    servingsPerContainer: 60,
+    tags: ['Energy Production', 'Hemoglobin', 'Iron Deficiency', 'Gentle Formula'],
+    imageUrl: '/Producta/Iron Bisglycinate.png',
+    galleryUrls: [
+      '/Producta/Iron Bisglycinate.png',
+    ]
+  },
+  {
+    id: 'myo-inositol',
+    name: 'Myo-Inositol + D-Chiro Inositol',
+    slug: 'myo-inositol-d-chiro',
+    category: 'Daily Essentials',
+    price: 1199,
+    salePrice: 999,
+    subscriptionDiscount: 15,
+    rating: 4.9,
+    reviewsCount: 271,
+    shortDescription: 'A clinically validated 40:1 ratio of Myo-Inositol to D-Chiro Inositol to support hormonal balance, ovarian function, and insulin sensitivity.',
+    description: 'Myo-Inositol and D-Chiro Inositol are two naturally occurring forms of inositol that act as secondary messengers in insulin signaling. Clinical research, particularly in women with PCOS, has demonstrated that the physiological 40:1 ratio (mirroring the body\'s natural ratio) optimally supports ovarian function, menstrual regularity, and insulin sensitivity. Our formula is unflavored and dissolves instantly for easy daily use.',
+    benefits: [
+      'Supports hormonal balance and regular menstrual cycles (PCOS)',
+      'Improves insulin sensitivity and metabolic glucose handling',
+      'Promotes healthy oocyte quality and ovarian function',
+      'Reduces androgen levels and associated symptoms'
+    ],
+    ingredients: [
+      { name: 'Myo-Inositol', dosage: '2000 mg' },
+      { name: 'D-Chiro Inositol', dosage: '50 mg' }
+    ],
+    howToUse: 'Mix 1 scoop in 200ml of water or juice. Take twice daily — once in the morning and once in the evening with meals.',
+    servingSize: '1 Scoop (2.05g)',
+    servingsPerContainer: 60,
+    tags: ['PCOS Support', 'Hormonal Balance', 'Insulin Sensitivity', 'Fertility'],
+    imageUrl: '/Producta/Myo-Inositol + D-Chiro.png',
+    galleryUrls: [
+      '/Producta/Myo-Inositol + D-Chiro.png',
+    ]
+  },
+  {
+    id: 'psyllium-husk',
+    name: 'Psyllium Husk (Isabgul)',
+    slug: 'psyllium-husk',
+    category: 'Daily Essentials',
+    price: 599,
+    salePrice: 499,
+    subscriptionDiscount: 15,
+    rating: 4.7,
+    reviewsCount: 312,
+    shortDescription: 'Premium 99% pure Psyllium Husk powder — nature\'s most powerful soluble fiber for gut health, cholesterol management, and healthy blood sugar regulation.',
+    description: 'Psyllium Husk (Plantago ovata seed husk) is a natural, soluble dietary fiber that forms a viscous gel in the digestive tract, acting as a prebiotic to feed beneficial gut bacteria. It is one of the very few dietary supplements approved by the FDA for cholesterol reduction claims. Our 99% pure psyllium husk is free from additives, artificial flavors, and synthetic fillers.',
+    benefits: [
+      'Feeds beneficial gut microbiome as a premium prebiotic fiber',
+      'Clinically demonstrated to reduce LDL cholesterol levels',
+      'Promotes regular bowel movements and digestive comfort',
+      'Slows glucose absorption to support stable blood sugar levels'
+    ],
+    ingredients: [
+      { name: 'Organic Psyllium Husk Powder (Plantago ovata)', dosage: '5000 mg', dailyValue: '18%' },
+      { name: 'Dietary Fiber', dosage: '4.5 g', dailyValue: '16%' }
+    ],
+    howToUse: 'Mix 1 teaspoon (5g) in 250ml of water or juice. Drink immediately before it gels. Take 1–2 times daily. Always drink plenty of water throughout the day.',
+    servingSize: '1 Teaspoon (5g)',
+    servingsPerContainer: 60,
+    tags: ['Gut Health', 'Cholesterol', 'Digestive Fiber', 'Blood Sugar'],
+    imageUrl: '/Producta/Psyllium Husk (Isabgul).png',
+    galleryUrls: [
+      '/Producta/Psyllium Husk (Isabgul).png',
     ]
   },
   {
@@ -131,7 +373,7 @@ export const products: Product[] = [
     subscriptionDiscount: 15,
     rating: 4.7,
     reviewsCount: 198,
-    shortDescription: 'A clinical stack of Alpha-GPC, L-Theanine, Bacopa Monnieri, and Lion’s Mane for flow state focus, mental clarity, and neurogenesis.',
+    shortDescription: 'A clinical stack of Alpha-GPC, L-Theanine, Bacopa Monnieri, and Lion\'s Mane for flow state focus, mental clarity, and neurogenesis.',
     description: 'Nootropic Brain Booster is a clean, non-stimulant cognitive optimizer designed to cross the blood-brain barrier. By combining acetylcholine precursors, adaptogenic herbs, and medicinal mushroom extracts, it promotes neural transmission speed, neurotransmitter synthesis, and long-term neuroplasticity.',
     benefits: [
       'Induces calm, jitter-free flow state focus and alertness',
@@ -141,7 +383,7 @@ export const products: Product[] = [
     ],
     ingredients: [
       { name: 'Alpha-GPC (L-Alpha-glycerylphosphorylcholine)', dosage: '600 mg' },
-      { name: 'Organic Lion’s Mane Mushroom Extract (Water Extracted)', dosage: '500 mg' },
+      { name: 'Organic Lion\'s Mane Mushroom Extract (Water Extracted)', dosage: '500 mg' },
       { name: 'Bacopa Monnieri Extract (50% Bacosides)', dosage: '300 mg' },
       { name: 'L-Theanine (Bio-Identical)', dosage: '200 mg' },
       { name: 'Phosphatidylserine', dosage: '100 mg' }
@@ -150,10 +392,9 @@ export const products: Product[] = [
     servingSize: '3 Vegan Capsules',
     servingsPerContainer: 30,
     tags: ['Mental Focus', 'Memory Support', 'Neurogenesis', 'Caffeine-Free'],
-    imageUrl: 'https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&q=80&w=800',
+    imageUrl: '/Producta/L-Theanine.png',
     galleryUrls: [
-      'https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=800'
+      '/Producta/L-Theanine.png',
     ]
   },
   {
@@ -184,42 +425,9 @@ export const products: Product[] = [
     servingSize: '2 Capsules',
     servingsPerContainer: 30,
     tags: ['Cellular Energy', 'DNA Repair', 'Mitochondrial Health', 'Longevity Core'],
-    imageUrl: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=800',
+    imageUrl: '/Producta/Berberine + Cinnamon.png',
     galleryUrls: [
-      'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&q=80&w=800'
-    ]
-  },
-  {
-    id: 'magnesium',
-    name: 'Magnesium L-Threonate (Neuro-Mag)',
-    slug: 'magnesium-l-threonate',
-    category: 'Cognitive Health',
-    price: 1699,
-    salePrice: 1499,
-    subscriptionDiscount: 15,
-    rating: 4.9,
-    reviewsCount: 176,
-    shortDescription: 'The only form of magnesium validated to effectively cross the blood-brain barrier to promote synapse density, sleep quality, and calm.',
-    description: 'Magnesium L-Threonate was developed at MIT to solve a critical limitation of other magnesium forms: brain bioavailability. By crossing the blood-brain barrier, it elevates cerebrospinal fluid magnesium, supporting synaptic density, calming nervous system excitability, and optimizing slow-wave sleep cycles.',
-    benefits: [
-      'Crosses the blood-brain barrier to optimize neural magnesium levels',
-      'Improves executive function, attention, and memory consolidation',
-      'Promotes restorative deep sleep and calms racing thoughts',
-      'Supports healthy neural connections and synapse plasticity'
-    ],
-    ingredients: [
-      { name: 'Magnesium L-Threonate (Magtein®)', dosage: '2000 mg' },
-      { name: '  yielding Elemental Magnesium', dosage: '144 mg', dailyValue: '34%' }
-    ],
-    howToUse: 'Take 3 capsules daily. We recommend 1 capsule in the afternoon and 2 capsules 1 hour before sleep to support circadian rest.',
-    servingSize: '3 Vegan Capsules',
-    servingsPerContainer: 30,
-    tags: ['Deep Sleep', 'Synapse Density', 'Nervous Calm', 'Brain Bioactive'],
-    imageUrl: 'https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&q=80&w=800',
-    galleryUrls: [
-      'https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=800'
+      '/Producta/Berberine + Cinnamon.png',
     ]
   },
   {
@@ -249,10 +457,9 @@ export const products: Product[] = [
     servingSize: '1 Scoop (11g)',
     servingsPerContainer: 41,
     tags: ['Joint Strength', 'Dermal Elasticity', 'Gut Lining', 'Grass-Fed'],
-    imageUrl: 'https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&q=80&w=800',
+    imageUrl: '/Producta/Psyllium Husk (Isabgul).png',
     galleryUrls: [
-      'https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1611536326696-b52be8ef45f6?auto=format&fit=crop&q=80&w=800'
+      '/Producta/Psyllium Husk (Isabgul).png',
     ]
   },
   {
@@ -284,10 +491,9 @@ export const products: Product[] = [
     servingSize: '1 Scoop (12g)',
     servingsPerContainer: 30,
     tags: ['Muscle Pump', 'Endurance Buffer', 'Clean Power', 'Natural Drive'],
-    imageUrl: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80&w=800',
+    imageUrl: '/Producta/Beetroot (TruBeet®).png',
     galleryUrls: [
-      'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80&w=800'
+      '/Producta/Beetroot (TruBeet®).png',
     ]
   }
 ];

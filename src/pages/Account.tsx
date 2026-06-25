@@ -165,7 +165,7 @@ export const Account: React.FC = () => {
                     <div className="p-4 border border-brand-border bg-brand-bg/25 rounded flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                       <div className="flex gap-3">
                         <div className="w-16 h-16 bg-white border rounded overflow-hidden flex-shrink-0">
-                          <img src="https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&q=80&w=150" alt="Omega-3" className="w-full h-full object-cover" />
+                          <img src="/Producta/Fish Oil.png" alt="Omega-3" className="w-full h-full object-cover" />
                         </div>
                         <div>
                           <h4 className="font-display font-bold text-xs text-primary">Omega-3 Pure Antarctic Fish Oil</h4>

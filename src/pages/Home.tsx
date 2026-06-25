@@ -502,12 +502,12 @@ export const Home: React.FC = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {[
-              'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80&w=300',
-              'https://images.unsplash.com/photo-1540206351-d6465b3ac5c1?auto=format&fit=crop&q=80&w=300',
-              'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=300',
-              'https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&q=80&w=300',
-              'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=300',
-              'https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&q=80&w=300'
+              '/Producta/Fish Oil.png',
+              '/Producta/Creatine Monohydrate (Micronized).png',
+              '/Producta/D3 + K2.png',
+              '/Producta/Magnesium.png',
+              '/Producta/L-Theanine.png',
+              '/Producta/Affron® Saffron Extract.png'
             ].map((imgUrl, index) => (
               <motion.div
                 key={index}
