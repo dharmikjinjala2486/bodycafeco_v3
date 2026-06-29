@@ -23,6 +23,13 @@ export const SustainableRefillSection: React.FC = () => {
   /** Guard: prevent double-preload */
   const didPreload  = useRef(false);
 
+  /** The "raw" 0→1 progress driven purely by scroll position */
+  const scrollProgress = useRef(0);
+  /** The "display" progress that smoothly lerps toward scrollProgress each rAF tick */
+  const displayProgress = useRef(0);
+  /** Whether the lerp rAF loop is currently running */
+  const loopRunning = useRef(false);
+
   // ── Canvas sizing ─────────────────────────────────────────────────────────────
   const resizeCanvas = useCallback(() => {
     const canvas = canvasRef.current;
@@ -93,6 +100,44 @@ export const SustainableRefillSection: React.FC = () => {
     }
   }, [drawFrame, resizeCanvas]);
 
+  // ── Continuous lerp rAF loop ──────────────────────────────────────────────────
+  const startLoop = useCallback(() => {
+    if (loopRunning.current) return;
+    loopRunning.current = true;
+
+    const LERP_SPEED = 0.08; // 0–1: higher = snappier, lower = smoother.
+
+    const tick = () => {
+      const target  = scrollProgress.current;
+      const current = displayProgress.current;
+      const delta   = target - current;
+
+      // Stop when close enough to avoid burning CPU when nothing is animating
+      if (Math.abs(delta) < 0.0001) {
+        displayProgress.current = target;
+        loopRunning.current = false;
+        const finalIdx = Math.min(TOTAL_FRAMES - 1, Math.round(target * (TOTAL_FRAMES - 1)));
+        drawFrame(finalIdx);
+        return; // exit loop
+      }
+
+      // Lerp displayProgress toward target
+      displayProgress.current = current + delta * LERP_SPEED;
+
+      // Map progress to frame index
+      const frameIdx = Math.min(TOTAL_FRAMES - 1, Math.round(displayProgress.current * (TOTAL_FRAMES - 1)));
+
+      // Only redraw when the index actually changes (avoids redundant canvas ops)
+      if (frameIdx !== paintedIdx.current) {
+        drawFrame(frameIdx);
+      }
+
+      rafHandle.current = requestAnimationFrame(tick);
+    };
+
+    rafHandle.current = requestAnimationFrame(tick);
+  }, [drawFrame]);
+
   // ── Scroll handler: map page position → frame index ──────────────────────────
   //
   // TIMELINE (using getBoundingClientRect, which is live):
@@ -119,16 +164,17 @@ export const SustainableRefillSection: React.FC = () => {
     const totalTravel = startEdge - endEdge;    // positive number
 
     const progress = Math.max(0, Math.min(1, (startEdge - rect.top) / totalTravel));
-    const targetIdx = Math.min(TOTAL_FRAMES - 1, Math.round(progress * (TOTAL_FRAMES - 1)));
 
-    if (targetIdx === paintedIdx.current) return;
+    if (progress === scrollProgress.current) return;
+
+    scrollProgress.current = progress;
 
     // Trigger preload the moment we first need frames
     if (!didPreload.current) preload();
 
-    cancelAnimationFrame(rafHandle.current);
-    rafHandle.current = requestAnimationFrame(() => drawFrame(targetIdx));
-  }, [drawFrame, preload]);
+    // Wake up the lerp loop
+    startLoop();
+  }, [preload, startLoop]);
 
   // ── Effects ───────────────────────────────────────────────────────────────────
   useEffect(() => {

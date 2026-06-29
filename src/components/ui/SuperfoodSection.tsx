@@ -159,7 +159,7 @@ export const SuperfoodSection: React.FC = () => {
     if (loopRunning.current) return;
     loopRunning.current = true;
 
-    const LERP_SPEED = 0.18; // 0–1: higher = snappier; 0.18 = smooth but responsive
+    const LERP_SPEED = 0.08; // 0–1: higher = snappier, lower = smoother.
 
     const tick = () => {
       const target  = scrollProgress.current;
@@ -210,8 +210,8 @@ export const SuperfoodSection: React.FC = () => {
   //   Inside Zone B the animation is compressed into only 25% of section height
   //   ≈ 200px of scroll for 14 frames → ~14px per frame — fast, Apple-style.
   //
-  const ANIM_START = 0.25; // section progress where animation begins
-  const ANIM_END   = 0.50; // section progress where animation ends
+  const ANIM_START = 0.15; // section progress where animation begins
+  const ANIM_END   = 0.75; // section progress where animation ends
 
   const onScroll = useCallback(() => {
     const section = sectionRef.current;

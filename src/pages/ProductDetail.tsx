@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { products } from '../data/products';
 import { useCart } from '../context/CartContext';
@@ -108,21 +108,19 @@ export const ProductDetail: React.FC = () => {
     return products.find((p) => p.slug === slug);
   }, [slug]);
 
-  if (!product) {
-    return (
-      <div className="pt-32 pb-24 text-center min-h-[70vh] flex flex-col items-center justify-center bg-[#EBEAF2]">
-        <h2 className="font-serif font-bold text-2xl text-[#1D1D1F]">Formula Not Found</h2>
-        <p className="text-sm text-[#4E4E52] mt-2">The requested supplement formula does not exist in our scientific database.</p>
-        <Link to="/shop" className="mt-6 px-8 py-3 bg-white text-[#1D1D1F] text-xs font-bold uppercase tracking-wider rounded-full shadow-sm hover:shadow-md transition-all">
-          Browse All Supplements
-        </Link>
-      </div>
-    );
-  }
+  const [selectedImage, setSelectedImage] = useState(
+    product?.galleryUrls?.[0] || product?.imageUrl || ''
+  );
 
-  const [selectedImage, setSelectedImage] = useState(product.galleryUrls[0] || product.imageUrl);
+  // Sync selectedImage state if product changes
+  useEffect(() => {
+    if (product) {
+      setSelectedImage(product.galleryUrls[0] || product.imageUrl);
+    }
+  }, [product]);
 
   const thumbnails = useMemo(() => {
+    if (!product) return [];
     const list = [...(product.galleryUrls || [])];
     if (list.length === 0 && product.imageUrl) {
       list.push(product.imageUrl);
@@ -137,6 +135,14 @@ export const ProductDetail: React.FC = () => {
   }, [product]);
 
   const editorial = useMemo(() => {
+    if (!product) {
+      return {
+        titleLines: [],
+        mainSubtitle: '',
+        italicSubtitle: '',
+        benefits: []
+      };
+    }
     return productEditorialData[product.slug] || {
       titleLines: product.name.split(' '),
       mainSubtitle: product.shortDescription,
@@ -146,8 +152,22 @@ export const ProductDetail: React.FC = () => {
   }, [product]);
 
   const handleAddToCart = () => {
-    addToCart(product, 1, false);
+    if (product) {
+      addToCart(product, 1, false);
+    }
   };
+
+  if (!product) {
+    return (
+      <div className="pt-32 pb-24 text-center min-h-[70vh] flex flex-col items-center justify-center bg-[#EBEAF2]">
+        <h2 className="font-serif font-bold text-2xl text-[#1D1D1F]">Formula Not Found</h2>
+        <p className="text-sm text-[#4E4E52] mt-2">The requested supplement formula does not exist in our scientific database.</p>
+        <Link to="/shop" className="mt-6 px-8 py-3 bg-white text-[#1D1D1F] text-xs font-bold uppercase tracking-wider rounded-full shadow-sm hover:shadow-md transition-all">
+          Browse All Supplements
+        </Link>
+      </div>
+    );
+  }
 
   const renderTitleLine = (line: string) => {
     if (line.includes('&')) {
